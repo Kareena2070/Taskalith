@@ -317,3 +317,104 @@ body.dark-mode .stat-info p {
 
 
 
+/* Virtual Pet Container */
+#virtual-pet {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 40;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5rem;
+ }
+ 
+ 
+ /* Pet Emoji */
+ #pet-emoji {
+    font-size: clamp(2.5rem, 8vw, 5rem); /* scales with screen size */
+    animation: bounce 1s infinite;
+ }
+ 
+ 
+ /* Bounce Animation */
+ @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10%); }
+ }
+ 
+ 
+ /* Speech Bubble */
+ #pet-speech {
+    position: absolute;
+    bottom: 100%; /* position above the pet */
+    right: 50%;
+    transform: translateX(50%);
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0.5rem 0.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 50;
+    font-size: clamp(0.7rem, 2.5vw, 1rem); /* responsive text */
+    color: #333;
+ }
+ 
+ 
+ /* Speech bubble triangle */
+ #pet-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+ }
+ 
+ 
+ /* Dark Mode Speech Bubble */
+ body.dark-mode #pet-speech {
+    background-color: #444;
+    color: #f0f0f0;
+ }
+ 
+ 
+ body.dark-mode #pet-speech::after {
+    border-color: #444 transparent transparent transparent;
+ }
+ 
+ 
+ /* Responsive tweaks for small screens */
+ @media (max-width: 500px) {
+    #pet-emoji {
+        font-size: 3rem;
+    }
+ 
+ 
+    #pet-speech {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+ }
+ 
+ 
+ @media (max-width: 300px) {
+    #pet-emoji {
+        font-size: 2.5rem;
+    }
+ 
+ 
+    #pet-speech {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.5rem;
+    }
+ }
+ 
+ 
+ 
+ 
+ 
