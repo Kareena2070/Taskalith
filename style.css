@@ -1,0 +1,319 @@
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Header & Navigation */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem 2rem; /* taller navbar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.7rem 1rem; /* increased padding */
+    font-size: 1.8rem;    /* larger font size */
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Theme button styling */
+#theme-toggle {
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.8rem;
+}
+
+#theme-toggle:hover {
+    background-color: #f0f0f0;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #333;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: #444;
+}
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode header nav {
+    background-color: #222;
+}
+
+body.dark-mode .nav-links a {
+    color: #f0f0f0;
+}
+
+body.dark-mode .nav-links a:hover {
+    background-color: #333;
+}
+
+/* Main content */
+main {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Home Page H1 */
+main h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* min 2rem, scales with viewport, max 3rem */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+
+/* Responsive */
+@media (max-width:950px) {
+     #theme-toggle{
+        font-size: 1rem;
+     }
+
+     .nav-links a {
+        font-size: 1.1rem;
+     } 
+}
+@media (max-width: 600px) {
+    .nav-links {
+        display: none; /* hide links initially */
+        flex-direction: column;
+        width: 100%;
+        background-color: inherit;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 0.8rem 0;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    #theme-toggle {
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 0.7rem 0;
+    }
+
+    #theme-toggle {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+@media (max-width: 250px) {
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.6rem 0;
+    }
+
+    #theme-toggle {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.5rem;
+    }
+}
+
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    padding: 2rem 3rem;
+    background-color: #f8f9fa;
+}
+
+/* Container for all cards */
+#all-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+}
+
+/* Individual Stat Card */
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: linear-gradient(135deg, #ffffff, #f0f4ff);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Small top div */
+.stat-card1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1.5rem;
+    background-color: #e0e7ff;
+    border-bottom: 1px solid #d1d5db;
+    gap: 1rem;
+}
+
+/* Large bottom div */
+.stat-card2 {
+    flex: 5; /* 5 times larger */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #f3f4f6; */
+    padding: 2rem;
+    flex-direction: column;
+}
+
+/* Icon inside card */
+.stat-icon {
+    font-size: 3rem;
+}
+
+/* Info inside card */
+.stat-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.stat-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Hover effect */
+.stat-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Dark Mode - Stats Container */
+body.dark-mode .stats-container {
+    background-color: #1a1a1a;
+}
+/* Dark Mode */
+body.dark-mode .stat-card {
+    background: linear-gradient(135deg, #2c2c2c, #3b3b3b);
+    color: #f0f0f0;
+}
+
+body.dark-mode .stat-card1 {
+    background-color: #444;
+}
+
+body.dark-mode .stat-card2 {
+    background-color: #555;
+}
+
+body.dark-mode .stat-info p {
+    color: #ccc;
+}
+
+/* Responsive: Medium screens */
+@media (max-width: 800px) {
+    .stat-card {
+        flex: 1 1 45%;
+    }
+
+    .stat-icon {
+        font-size: 2.5rem;
+    }
+
+    .stat-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .stat-info p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive: Small screens */
+@media (max-width: 500px) {
+    .stat-card {
+        flex: 1 1 100%;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .stat-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .stat-info p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
