@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="style.css">   <!-- style for navbar-->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="tasks.html">Tasks</a>
+                <a href="games.html">Games</a>
+                <a href="tools.html">Tools</a>
+                <a href="about.html">About</a>
+            </div>
+            <button class="hamburger" id="hamburger">☰</button>
+            <button id="theme-toggle">🌙 / ☀️</button>
+        </nav>
+    </header>
+
+    <div id="All-task">
+
+        <div class="task1">
+            <section class="tasks-page">
+                <h1>Tasks Today</h1>
+                <div class="task-input-container">
+                    <input type="text" id="task-input" placeholder="Add a new task...">
+                    <button onclick="addTask()">Add</button>
+                </div>
+                <div id="tasks-list"></div>
+            </section>
+
+            <section class="weekly-tasks-page">
+                <h1>Weekly Tasks</h1>
+                <div class="task-input-container">
+                    <input type="text" id="weekly-task-input" placeholder="Add weekly task...">
+                    <button onclick="addWeeklyTask()">Add</button>
+                </div>
+                <div id="weekly-tasks-list"></div>
+            </section>
+        </div>
+
+        <div class="task2">
+            <section class="weekly-habit-tracker">
+                <h1>🌟 Weekly Habit Tracker</h1>
+                <div id="weekly-habits-list"></div>
+            </section>
+
+            <section class="daily-inspiration">
+                <h1>💖 Daily Inspiration</h1>
+                <p id="quote">Loading quote...</p>
+                <button onclick="newQuote()">🌸 New Quote</button>
+            </section>
+        </div>
+    </div>
+
+    <script src="tasks.js"></script>
+    <script src="script.js"></script>    <!--JS for navbar -->
+</body>
+</html>
